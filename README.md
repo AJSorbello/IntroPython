@@ -44,3 +44,10 @@ Contributions to the Recipe App are welcome. Please follow the standard fork-and
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Data Structure: Dictionaries
+
+## Recipe Data Structure
+
+Dictionaries are ideal for recipes because they store values indexed by unique keys. Each dictionary contains key-value pairs, making it easy to identify ingredients and their amounts. For example, a cake recipe would have entries like "Flour: 1 cup," "Eggs: 4," and "Baking soda: 2 tablespoons." This structure ensures clear and efficient data retrieval.
+
