@@ -89,3 +89,74 @@ These goals will help me stay focused and motivated. After completing this cours
 
    **Answer:** For the language-learning app, I would choose dictionaries because this structure allows easy access and modification and is more flexible when needing to add additional attributes in the future like usage frequency and example sentences. Lists or tuples would not be as efficient because they don't provide named keys for easy access and modification.
 
+# Exercise 1.3: Functions and Other Operations in Python
+
+## Learning Goals
+- Implement conditional statements in Python to determine program flow
+- Use loops to reduce time and effort in Python programming
+- Write functions to organize Python code
+
+## 1: Reflection Questions
+
+In this exercise, you learned how to use `if-elif-else` statements to run different tasks based on conditions that you define. Now practice that skill by writing a script for a simple travel app using an `if-elif-else` statement for the following situation:
+
+1. The script should ask the user where they want to travel.
+2. The user’s input should be checked for 3 different travel destinations that you define.
+3. If the user’s input is one of those 3 destinations, the following statement should be printed: “Enjoy your stay in ______!”
+4. If the user’s input is something other than the defined destinations, the following statement should be printed: “Oops, that destination is not currently available.”
+
+### Write your script here. (Hint: remember what you learned about indents!)
+
+
+## Asking the user where they want to travel
+```python
+destination = input("Where do you want to travel? ")
+```
+## Defining three travel destinations
+```python
+destination_1 = "Paris"
+destination_2 = "New York"
+destination_3 = "Tokyo"
+```
+
+## Checking user's input and printing appropriate message
+```python
+if destination == destination_1:
+    print("Enjoy your stay in Paris!")
+elif destination == destination_2:
+    print("Enjoy your stay in New York!")
+elif destination == destination_3:
+    print("Enjoy your stay in Tokyo!")
+else:
+    print("Oops, that destination is not currently available.")
+```
+## 2: Imagine you’re at a job interview for a Python developer role. The interviewer says “Explain logical operators in Python”. Draft how you would respond.
+
+Logical operators in Python are used to combine conditional statements. There are three logical operators:
+
+-  and: Returns True if both statements are true.
+Example: a and b returns True only if both a and b are True.
+-  or: Returns True if one of the statements is true.
+Example: a or b returns True if either a or b is True.
+-  not: Reverses the result, returns False if the result is true.
+Example: not a returns True if a is False.
+
+## 3: What are functions in Python? When and why are they useful?
+
+Functions in Python are defined using the def keyword. A function is a block of code that only runs when it is called. Functions help to break the code into smaller and modular chunks. They can accept inputs, perform specific tasks, and return outputs.
+
+### When and why are functions useful?
+
+Modularity: They help divide a complex problem into smaller, manageable pieces.
+Reusability: Once a function is defined, it can be reused multiple times in a program, reducing code redundancy.
+Readability: Functions make the code more organized and easier to read and understand.
+Maintainability: Functions make it easier to update and maintain the code since changes in functionality can be made within the function without affecting the entire codebase.
+In the section for Exercise 1 in this Learning Journal, you were asked in question 3 to set some goals for yourself while you complete this course. In preparation for your next mentor call, make some notes on how you’ve progressed towards your goals so far.
+
+## For the preparation of your next mentor call, consider reflecting on the following points:
+
+## 4: Progress Towards Goals: 
+
+Progress:
+
+So far, I have completed all exercises and reflection questions for Exercise 1.3, focusing on conditional statements, loops, and functions in Python. My initial goals were to strengthen my understanding of Python basics and write cleaner code, which the exercises have helped achieve. I faced challenges with if-elif-else statements and writing functions but overcame them through practice and additional resources. As a result, I've improved my code structure, problem-solving skills, and understanding of logical operators. Next, I plan to continue practicing, explore advanced Python topics, and develop a small project to apply my learning.
