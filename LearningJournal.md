@@ -18,7 +18,7 @@ Answer: - Like any new language, there is a learning curve. Staying focused on t
 
 *Remember, you can always refer to Exercise 1.4 of the Orientation course if you’re not sure whom to reach out to for help and support.*
 
-## Exercise 1.1: Getting Started with Python
+# Exercise 1.1: Getting Started with Python
 
 ### Learning Goals
 
@@ -56,7 +56,7 @@ Prepare for a Job in Software Development
 My ultimate goal is to be ready for a job in software development where I can use Python. I want to be good enough at Python to confidently apply for jobs that need Python skills. I also plan to create a portfolio of Python projects to show potential employers what I can do.
 These goals will help me stay focused and motivated. After completing this course, I see myself working in a job where I can create useful software solutions, possibly in web development or data analysis, using Python.
 ```
-## Exercise 1.2: Data Types in Python
+# Exercise 1.2: Data Types in Python
 
 ### Learning Goals
 - Explain variables and data types in Python
@@ -160,3 +160,65 @@ In the section for Exercise 1 in this Learning Journal, you were asked in questi
 Progress:
 
 So far, I have completed all exercises and reflection questions for Exercise 1.3, focusing on conditional statements, loops, and functions in Python. My initial goals were to strengthen my understanding of Python basics and write cleaner code, which the exercises have helped achieve. I faced challenges with if-elif-else statements and writing functions but overcame them through practice and additional resources. As a result, I've improved my code structure, problem-solving skills, and understanding of logical operators. Next, I plan to continue practicing, explore advanced Python topics, and develop a small project to apply my learning.
+
+
+### Exercise 1.4: File Handling in Python
+
+#### Learning Goals
+- Use files to store and retrieve data in Python.
+
+#### Reflection Questions
+
+**Why is file storage important when you’re using Python? What would happen if you didn’t store local files?**
+
+**Answer:** File storage is important in Python for several reasons:
+
+- **Persistence:** It allows data to persist beyond the execution of the program. Without file storage, all data would be lost once the program terminates.
+- **Data Management:** Storing data in files helps in managing large amounts of data efficiently. It also facilitates data sharing between different programs and users.
+- **Backup and Recovery:** Files provide a way to backup data, which can be recovered in case of system failures.
+
+Without local file storage, you would have to rely on in-memory data structures which are not suitable for long-term data storage or for sharing data between different programs. Once the program ends, all data would be lost, making it impossible to maintain state or history.
+
+**In this exercise, you learned about the pickling process with the `pickle.dump()` method. What are pickles? In which situations would you choose to use pickles and why?**
+
+**Answer:** Pickles are a way to serialize and deserialize Python object structures. Using the `pickle` module, you can convert Python objects into a byte stream (`pickle.dump()`) and later convert the byte stream back into Python objects (`pickle.load()`).
+
+**Situations to use pickles:**
+
+- **Storing Complex Data Types:** Pickle is useful for storing complex data types like lists, dictionaries, or custom objects.
+- **Quick Serialization:** It provides a quick way to serialize and deserialize Python objects, which is useful for saving program state or data caching.
+- **Python-Specific Use:** It's particularly useful when the data will only be read and written by Python programs since it’s specific to Python.
+
+**In Python, what function do you use to find out which directory you’re currently in? What if you wanted to change your current working directory?**
+
+**Answer:** To find out the current working directory, you use the `os.getcwd()` function from the `os` module. To change the current working directory, you use the `os.chdir()` function.
+Imagine you’re working on a Python script and are worried there may be an error in a block of code. How would you approach the situation to prevent the entire script from terminating due to an error?
+
+Answer: To prevent the entire script from terminating due to an error, you can use a try-except block. This allows you to catch and handle exceptions gracefully.
+
+python
+Copy code
+try:
+    # Code that may raise an exception
+    risky_code()
+except SpecificException as e:
+    # Handle specific exception
+    print(f"An error occurred: {e}")
+except Exception as e:
+    # Handle any other exceptions
+    print(f"An unexpected error occurred: {e}")
+else:
+    # Code to execute if no exceptions were raised
+    print("Code executed successfully")
+finally:
+    # Code to execute regardless of whether an exception was raised or not
+    cleanup()
+You’re now more than halfway through Achievement 1! Take a moment to reflect on your learning in the course so far. How is it going? What’s something you’re proud of so far? Is there something you’re struggling with? What do you need more practice with? Feel free to use these notes to guide your next mentor call.
+
+Answer:
+
+Progress Reflection: Reflecting on the course so far, I've learned a lot about Python basics, file handling, and error management.
+Proud Moments: I’m proud of my ability to understand and implement file handling techniques and use the pickle module for data serialization.
+Challenges: I am struggling a bit with more advanced topics such as complex data structures and their manipulation.
+Need More Practice: I need more practice with error handling and understanding how to effectively debug my programs.
+Next Steps: In my next mentor call, I would like to discuss strategies for improving my understanding of advanced topics and best practices for debugging Python code.
