@@ -192,12 +192,23 @@ Without local file storage, you would have to rely on in-memory data structures 
 **In Python, what function do you use to find out which directory you’re currently in? What if you wanted to change your current working directory?**
 
 **Answer:** To find out the current working directory, you use the `os.getcwd()` function from the `os` module. To change the current working directory, you use the `os.chdir()` function.
+
+```
+import os
+current_directory = os.getcwd()  # Get current working directory
+print("Current Directory:", current_directory)
+
+os.chdir('/path/to/new/directory')  # Change current working directory
+print("Directory Changed To:", os.getcwd())
+```
+
 Imagine you’re working on a Python script and are worried there may be an error in a block of code. How would you approach the situation to prevent the entire script from terminating due to an error?
 
 Answer: To prevent the entire script from terminating due to an error, you can use a try-except block. This allows you to catch and handle exceptions gracefully.
 
+```
 python
-Copy code
+
 try:
     # Code that may raise an exception
     risky_code()
@@ -213,12 +224,17 @@ else:
 finally:
     # Code to execute regardless of whether an exception was raised or not
     cleanup()
+```
 You’re now more than halfway through Achievement 1! Take a moment to reflect on your learning in the course so far. How is it going? What’s something you’re proud of so far? Is there something you’re struggling with? What do you need more practice with? Feel free to use these notes to guide your next mentor call.
 
 Answer:
 
 Progress Reflection: Reflecting on the course so far, I've learned a lot about Python basics, file handling, and error management.
+
 Proud Moments: I’m proud of my ability to understand and implement file handling techniques and use the pickle module for data serialization.
+
 Challenges: I am struggling a bit with more advanced topics such as complex data structures and their manipulation.
+
 Need More Practice: I need more practice with error handling and understanding how to effectively debug my programs.
+
 Next Steps: In my next mentor call, I would like to discuss strategies for improving my understanding of advanced topics and best practices for debugging Python code.
