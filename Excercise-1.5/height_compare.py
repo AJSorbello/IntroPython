@@ -89,3 +89,15 @@ print(Height(5, 9) <= Height(5, 10))
 print(Height(4, 6) >= Height(4, 5))
 print(Height(4, 5) == Height(4, 5))
 print(Height(5, 9) != Height(5, 10))
+
+height_1 = Height(4, 10)
+height_2 = Height(5, 6)
+height_3 = Height(7, 1)
+height_4 = Height(5, 5)
+height_5 = Height(6, 7)
+height_6 = Height(5, 6)
+heights = [height_1, height_2, height_3, height_4, height_5, height_6]
+
+heights = sorted(heights, reverse=True)
+for height in heights:
+    print(height)
