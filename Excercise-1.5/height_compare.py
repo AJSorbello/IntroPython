@@ -41,6 +41,36 @@ class Height(object):
         # Returning the final output as a new Height object
         return Height(output_feet, output_inches)
     
+    def __lt__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A < height_inches_B
+
+    def __le__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A <= height_inches_B
+
+    def __eq__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A == height_inches_B
+    
+    def __ge__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A >= height_inches_B
+    
+    def __gt__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A > height_inches_B
+    
+    def __ne__(self, other):
+        height_inches_A = self.feet * 12 + self.inches
+        height_inches_B = other.feet * 12 + other.inches
+        return height_inches_A != height_inches_B
+    
 person_A_height = Height(5, 10)
 person_B_height = Height(4, 10)
 # add sum
@@ -52,3 +82,10 @@ person_C_height = Height(3, 9)
 # subtract sub
 height_sub = person_A_height - person_C_height
 print("Height Difference:", height_sub)
+
+print(Height(4, 6) < Height(4, 5))
+print(Height(4, 5) > Height(4, 5))
+print(Height(5, 9) <= Height(5, 10))  
+print(Height(4, 6) >= Height(4, 5))
+print(Height(4, 5) == Height(4, 5))
+print(Height(5, 9) != Height(5, 10))
