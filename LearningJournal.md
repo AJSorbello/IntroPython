@@ -238,3 +238,66 @@ Challenges: I am struggling a bit with more advanced topics such as complex data
 Need More Practice: I need more practice with error handling and understanding how to effectively debug my programs.
 
 Next Steps: In my next mentor call, I would like to discuss strategies for improving my understanding of advanced topics and best practices for debugging Python code.
+
+### Exercise 1.5: Object-Oriented Programming in Python
+
+#### Learning Goals
+- Apply object-oriented programming concepts to your Recipe app
+
+#### Reflection Questions
+
+1. **In your own words, what is object-oriented programming? What are the benefits of OOP?**
+
+**Answer:** Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data and code. Data is represented as attributes (also known as properties or fields), and code is represented as methods (functions that operate on the data). OOP aims to implement real-world entities like inheritance, hiding, polymorphism, and more in programming.
+
+**Benefits of OOP:**
+
+- **Modularity:** Code is organized into classes and objects, making it more modular. This modularity allows for easier maintenance and modification.
+- **Reusability:** Once a class is created, it can be reused to create multiple objects, reducing redundancy.
+- **Scalability:** OOP makes it easier to manage and scale larger projects by organizing code into manageable sections.
+- **Flexibility through Polymorphism:** Polymorphism allows methods to be used interchangeably based on the context, which simplifies code and increases flexibility.
+- **Encapsulation:** Encapsulation protects data by restricting access to it, which can prevent accidental modification and promote data integrity.
+
+2. **What are objects and classes in Python? Come up with a real-world example to illustrate how objects and classes work.**
+
+**Answer:**
+
+- **Class:** A class in Python is a blueprint for creating objects. It defines a set of attributes and methods that the created objects will have.
+- **Object:** An object is an instance of a class. It is created using the class and can access the class's attributes and methods.
+
+**Real-world example:**
+
+Consider a class `Car`:
+
+```python
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+    
+    def display_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}")
+
+An object of the Car class can be created as follows:
+```
+my_car = Car("Toyota", "Corolla", 2020)
+my_car.display_info()  # Outputs: Brand: Toyota, Model: Corolla, Year: 2020
+```
+
+Here, Car is a class, and my_car is an object of the Car class. The my_car object has attributes (brand, model, and year) and can use methods (display_info) defined in the class.
+
+3. In your own words, write brief explanations of the following OOP concepts; 100 to 200 words per method is fine.
+
+Method	Description
+
+## Inheritance:
+	Inheritance is an OOP concept where a new class (called the child or subclass) is created based on an existing class (called the parent or superclass). The child class inherits attributes and methods from the parent class, allowing for code reuse and the creation of a hierarchical relationship between classes. This helps in reducing redundancy and promotes the reuse of existing code. For example, a Dog class can inherit from an Animal class, gaining its attributes and behaviors while adding specific dog-related features.
+
+## Polymorphism:
+	Polymorphism allows objects of different classes to be treated as objects of a common superclass. It is the ability to redefine methods for derived classes. This means that a single method can operate differently on different objects. For example, a method make_sound can be defined in a parent class Animal and overridden in subclasses Dog and Cat. When called, make_sound will produce a different sound based on whether it is invoked on a Dog object or a Cat object. This allows for flexibility and the use of a single interface to interact with different types of objects.
+    
+## Operator Overloading:
+	Operator overloading is the ability to define custom behavior for operators (such as +, -, *, etc.) for user-defined classes. This allows objects of custom classes to interact using standard operators. For example, in a Vector class, you can overload the + operator to allow the addition of two Vector objects. This is done by defining the __add__ method within the class. Operator overloading makes code more intuitive and easier to read, as it allows for natural expressions and operations on objects.
+
+By applying these OOP concepts, you can create a more organized, reusable, and maintainable code structure in your Recipe app or any other software project.
