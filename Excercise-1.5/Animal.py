@@ -4,55 +4,90 @@ class Animal(object):
         self.age = age
         self.name = None
 
-    # We'll throw in getter methods for age and name       
+    # Getter methods for age and name       
     def get_age(self):
         return self.age
 
     def get_name(self):
         return self.name
 
-    # And setter methods as well
+    # Setter methods for age and name
     def set_age(self, age):
         self.age = age
 
     def set_name(self, name):
         self.name = name
 
-    # We'll also have a well-formatted string representation, too!
+    # String representation of the Animal class
     def __str__(self):
         output = "\nClass: Animal\nName: " + str(self.name) + \
             "\nAge: " + str(self.age)
         return output
 
-# We'll create a Cat class that inherits from the Animal class
+
 class Cat(Animal):
+    # Initialize the Cat class
     def __init__(self, age):
         super().__init__(age)
 
-    # Introducing a new method where it speaks
+    # Cat's speak method
     def speak(self):
         print("Meow")
 
-    # Another neat string representation for cats
+    # String representation of the Cat class
     def __str__(self):
         output = "\nClass: Cat\nName: " + str(self.name) + \
             "\nAge: " + str(self.age)
         return output
 
-# We'll create a Dog class that inherits from the Animal class
+
 class Dog(Animal):
+    # Initialize the Dog class
     def __init__(self, age):
         super().__init__(age)
 
-    # Introducing a new method where it speaks
+    # Dog's speak method
     def speak(self):
         print("Woof!")
 
-    # String representation for dogs
+    # String representation of the Dog class
     def __str__(self):
         output = "\nClass: Dog\nName: " + str(self.name) + \
             "\nAge: " + str(self.age)
         return output
+
+class Human(Animal):
+    # Initialize the Human class
+    def __init__(self, name, age):
+        super().__init__(age)
+
+        # Setting a name, since humans must have names
+        self.set_name(name)
+
+        # Our new attribute for humans, 'friends'!
+        self.friends = []
+
+    # Method to add friends
+    def add_friend(self, friend_name):
+        self.friends.append(friend_name)
+
+    # Method to display friends
+    def show_friends(self):
+        for friend in self.friends:
+            print(friend)
+
+    # Humans can speak sentences!
+    def speak(self):
+        print("Hello, my name's " + self.name + "!")
+
+    # String representation of the Human class
+    def __str__(self):
+        output = "\nClass: Human\nName: " + str(self.name) + \
+            "\nAge: " + str(self.age) + "\nFriends list: \n"
+        for friend in self.friends:
+            output += friend + "\n"
+        return output
+
 
 # Creating instances of Cat and Dog
 cat = Cat(3)
@@ -66,41 +101,10 @@ dog.set_name("Bubbles")
 print(cat)
 print(dog)
 
-
-class Human(Animal):
-    # Making its own initialization method
-    def __init__(self, name, age):
-        super().__init__(age)
-
-        # Setting a name, since humans must have names
-        self.set_name(name)
-
-        # Our new attribute for humans, 'friends'!
-        self.friends = []
-
-    # Adding another method to add friends
-    def add_friend(self, friend_name):
-        self.friends.append(friend_name)
-
-    # A method to display friends
-    def show_friends(self):
-        for friend in self.friends:
-            print(friend)
-
-    # Humans can speak sentences!
-    def speak(self):
-        print("Hello, my name's " + self.name + "!")
-
-    # We'll modify the string representation to include friends as well.
-    def __str__(self):
-        output = "\nClass: Human\nName: " + str(self.name) + \
-            "\nAge: " + str(self.age) + "\nFriends list: \n"
-        for friend in self.friends:
-            output += friend + "\n"
-        return output
-    
+# Creating an instance of Human
 human = Human("Tobias", 35)
 
+# Adding friends to the human
 human.add_friend("Robert")
 human.add_friend("Sarah")
 human.add_friend("John")
@@ -108,6 +112,7 @@ human.add_friend("Mike")
 human.add_friend("Tom")
 human.add_friend("Jen")
 
-human.speak()
-
+# Printing the human object
 print(human)
+# Human speaks
+human.speak()
