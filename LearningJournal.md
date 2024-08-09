@@ -301,3 +301,39 @@ Method	Description
 	Operator overloading is the ability to define custom behavior for operators (such as +, -, *, etc.) for user-defined classes. This allows objects of custom classes to interact using standard operators. For example, in a Vector class, you can overload the + operator to allow the addition of two Vector objects. This is done by defining the __add__ method within the class. Operator overloading makes code more intuitive and easier to read, as it allows for natural expressions and operations on objects.
 
 By applying these OOP concepts, you can create a more organized, reusable, and maintainable code structure in your Recipe app or any other software project.
+
+
+## Exercise 1.6: Learning Goals
+- Create a MySQL database for your Recipe app.
+
+## Reflection Questions
+
+### 1. What are databases and what are the advantages of using them?
+**Databases:** Databases are structured collections of data that are stored and managed electronically. They are used to store, retrieve, and manage data efficiently.
+
+**Advantages:**
+- **Data Integrity:** Databases help ensure that data is accurate and consistent over time.
+- **Data Security:** They provide mechanisms for securing data, including access controls and encryption.
+- **Scalability:** Databases can handle large volumes of data and complex queries, allowing applications to scale.
+
+### 2. List 3 data types that can be used in MySQL and describe them briefly:
+- **VARCHAR:** A variable-length string data type. It stores alphanumeric data and is often used for storing text with a variable length up to a specified limit.
+- **INT:** An integer data type. It stores whole numbers without decimals, often used for counting or identifiers.
+- **DATE:** A date data type. It stores dates in the format YYYY-MM-DD and is used for date-related fields.
+
+### 3. In what situations would SQLite be a better choice than MySQL?
+SQLite is better suited for:
+- **Single-user applications:** Where the database needs to be lightweight and doesn’t require the overhead of a full database server.
+- **Prototyping:** When quickly setting up a database for development or testing purposes without the need for complex setup.
+- **Embedded systems:** Where storage space is limited, and the application requires a self-contained database.
+
+### 4. Think back to what you learned in the Immersion course. What do you think about the differences between JavaScript and Python as programming languages?
+- **JavaScript:** Primarily used for web development, both on the client-side (in the browser) and server-side (with Node.js). It’s known for its event-driven, non-blocking I/O model, which is great for handling asynchronous operations.
+- **Python:** A versatile, high-level programming language known for its readability and simplicity. It’s widely used for web development, data analysis, AI, machine learning, and more. Python emphasizes code readability and allows developers to express concepts in fewer lines of code compared to JavaScript.
+
+### 5. Now that you’re nearly at the end of Achievement 1, consider what you know about Python so far. What would you say are the limitations of Python as a programming language?
+- **Performance:** Python is generally slower than compiled languages like C++ or Java because it’s an interpreted language.
+- **Mobile Development:** Python is not as commonly used for mobile application development compared to languages like Swift or Kotlin.
+- **Global Interpreter Lock (GIL):** In CPython, the most common implementation of Python, the GIL can be a bottleneck in CPU-bound and multithreaded programs, limiting the performance of concurrent threads.
+
+These questions are designed to help you reflect on the material and ensure you have a strong grasp of the concepts related to databases and the Python programming language. Let me know if you need further clarification or if there's anything specific you want to dive deeper into!
