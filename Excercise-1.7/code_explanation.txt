@@ -1,0 +1,25 @@
+ Explanation of the Code
+Base Class: The Base variable is used to define the declarative base class, which allows us to define models in a more Pythonic way.
+
+Table Definition:
+
+__tablename__ = 'final_recipes' specifies the name of the table as final_recipes.
+The model contains columns for id, name, ingredients, cooking_time, and difficulty.
+id is an integer and the primary key with auto-increment.
+name is a string with a 50-character limit.
+ingredients is a string with a 255-character limit.
+cooking_time is an integer representing the cooking time in minutes.
+difficulty is a string with a 20-character limit.
+Representation Methods:
+
+__repr__ method gives a quick representation of the Recipe object.
+__str__ method provides a formatted string representation of the Recipe.
+Helper Methods:
+
+calculate_difficulty: Calculates and assigns the difficulty of a recipe based on the number of ingredients and cooking time.
+return_ingredients_as_list: Returns the ingredients as a list.
+Creating the Table:
+
+Base.metadata.create_all(engine) ensures that the final_recipes table is created in the database if it doesn’t already exist.
+3. Running the Script
+When you run this script, it will create the final_recipes table in your MySQL database and be ready for CRUD operations.
