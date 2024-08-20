@@ -337,3 +337,38 @@ SQLite is better suited for:
 - **Global Interpreter Lock (GIL):** In CPython, the most common implementation of Python, the GIL can be a bottleneck in CPU-bound and multithreaded programs, limiting the performance of concurrent threads.
 
 These questions are designed to help you reflect on the material and ensure you have a strong grasp of the concepts related to databases and the Python programming language. Let me know if you need further clarification or if there's anything specific you want to dive deeper into!
+
+## Reflection Questions
+
+### What is an Object Relational Mapper (ORM) and what are the advantages of using one?
+
+**Response:** An Object Relational Mapper (ORM) is a tool that allows developers to interact with a database using an object-oriented paradigm instead of writing SQL queries directly. The primary advantages include:
+- **Abstraction:** Simplifies database interactions by allowing developers to work with Python objects rather than raw SQL queries.
+- **Portability:** Makes it easier to switch between different databases by abstracting the database layer.
+- **Productivity:** Reduces the amount of boilerplate code, enabling faster development.
+- **Security:** Helps prevent SQL injection attacks by automatically handling query parameters.
+
+### By this point, you’ve finished creating your Recipe app. How did it go? What’s something in the app that you did well with? If you were to start over, what’s something about your app that you would change or improve?
+
+**Response:** The development of the Recipe app went smoothly overall. One thing I did well was setting up the database models and implementing the authentication flow. If I were to start over, I would focus on improving the user interface to make it more intuitive and perhaps add more robust error handling throughout the app to improve user experience.
+
+### Imagine you’re at a job interview. You’re asked what experience you have creating an app using Python. Taking your work for this Achievement as an example, draft how you would respond to this question.
+
+**Response:** "During my recent project, I developed a command-line Recipe application using Python and SQLAlchemy as the ORM. The application allows users to create, view, edit, and delete recipes while storing data in a MySQL database. I implemented user authentication, ensuring secure access to the application's features. Additionally, I integrated various functionalities such as searching by ingredients, dynamically calculating recipe difficulty, and managing user profiles. This project gave me hands-on experience with Python, database interactions, and building scalable applications."
+
+### You’ve finished Achievement 1! Before moving on to Achievement 2, take a moment to reflect on your learning in the course so far:
+
+#### What went well during this Achievement?
+The structured approach to building the app, starting from setting up the database to implementing user features, went very well. The clear guidance on each step made the process manageable.
+
+#### What’s something you’re proud of?
+I’m proud of successfully integrating the ORM with the command-line interface, which made interacting with the database seamless.
+
+#### What was the most challenging aspect of this Achievement?
+The most challenging aspect was managing the different states of the application, especially ensuring that the database interactions were efficient and error-free.
+
+#### Did this Achievement meet your expectations? Did it give you the confidence to start working with your new Python skills?
+Yes, this Achievement exceeded my expectations. It reinforced my understanding of Python and databases, and I now feel confident in applying these skills to real-world projects.
+
+#### What’s something you want to keep in mind to help you do your best in Achievement 2?
+I want to keep in mind the importance of testing and validating each part of the application as I build it. This will help in catching issues early and ensuring a smooth development process.
