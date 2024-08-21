@@ -372,3 +372,49 @@ Yes, this Achievement exceeded my expectations. It reinforced my understanding o
 
 #### What’s something you want to keep in mind to help you do your best in Achievement 2?
 I want to keep in mind the importance of testing and validating each part of the application as I build it. This will help in catching issues early and ensuring a smooth development process.
+
+## Exercise 2.1: Getting Started with Django
+
+### Learning Goals
+
+- Explain MVT architecture and compare it with MVC
+- Summarize Django’s benefits and drawbacks 
+- Install and get started with Django
+
+### Reflection Questions
+
+#### 1. Suppose you’re a web developer in a company and need to decide if you’ll use vanilla (plain) Python for a project, or a framework like Django instead. What are the advantages and drawbacks of each?
+
+**Vanilla Python**:
+- **Advantages**:
+  - Greater flexibility and control: Developers have the freedom to build everything from scratch according to specific project needs.
+  - Lightweight: Since no additional libraries or frameworks are included, the development environment remains minimal and straightforward.
+  - Suitable for small scripts and applications: Ideal for small projects where using a framework might be overkill.
+
+- **Drawbacks**:
+  - Increased development time: Developers need to manually handle many aspects like routing, templating, and database connections.
+  - Less security: Without built-in protections, developers must be vigilant about implementing security measures.
+  - Steeper learning curve for complex tasks: Tasks such as database management, user authentication, and URL routing require more effort to implement.
+
+**Django Framework**:
+- **Advantages**:
+  - Rapid development: Django's "batteries-included" philosophy means it comes with many built-in features, allowing developers to build applications faster.
+  - Security: Django provides built-in protections against common security threats such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF).
+  - Scalable and maintainable: Django encourages a clean, modular code structure, making it easier to scale and maintain large applications.
+
+- **Drawbacks**:
+  - Steeper learning curve: Django has a lot of built-in features, which can be overwhelming for beginners.
+  - Potential for bloat: For small or simple projects, Django might be more than what's needed, adding unnecessary complexity.
+  - Less flexibility: Django enforces a certain way of doing things (such as its ORM), which might limit developers who need more control or wish to use alternative tools.
+
+#### 2. In your own words, what is the most significant advantage of Model View Template (MVT) architecture over Model View Controller (MVC) architecture?
+
+The most significant advantage of the MVT architecture over MVC is that MVT abstracts much of the "Controller" logic into Django itself, allowing developers to focus more on the "Model" and "Template" aspects. In MVC, the Controller often handles the logic of how data flows between the Model and the View, which can require more manual intervention by the developer. In contrast, MVT allows Django to handle much of this automatically, simplifying the development process and making it easier to get up and running quickly.
+
+#### 3. Now that you’ve had an introduction to the Django framework, write down three goals you have for yourself and your learning process during this Achievement. You can reflect on the following questions if it helps:
+
+1. **Understanding Django’s Core Concepts**: I want to deepen my understanding of Django’s core components, such as models, views, and templates, and how they interact within the MVT architecture.
+
+2. **Building Real-World Applications**: I aim to apply the knowledge gained from this achievement to build a full-fledged web application that includes features like user authentication, database integration, and deployment to a live server.
+
+3. **Enhancing Career Prospects**: By mastering Django, I plan to position myself to work on more complex projects, possibly in a company that utilizes Django, or to offer Django-based web development services as part of my career growth.
