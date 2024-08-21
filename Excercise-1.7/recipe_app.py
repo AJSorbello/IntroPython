@@ -1,9 +1,7 @@
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import sessionmaker
-
-from dotenv import load_dotenv
 import os
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
@@ -25,6 +23,23 @@ Base = declarative_base()
 
 # Define the Recipe model
 class Recipe(Base):
+    """
+    A class used to represent a Recipe.
+
+    Attributes:
+    ----------
+    id : int
+        The unique identifier for the recipe.
+    name : str
+        The name of the recipe.
+    ingredients : str
+        The ingredients of the recipe.
+    cooking_time : int
+        The cooking time in minutes.
+    difficulty : str
+        The difficulty level of the recipe.
+    """
+
     __tablename__ = "final_recipes"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -34,9 +49,15 @@ class Recipe(Base):
     difficulty = Column(String(20), nullable=False)
 
     def __repr__(self):
+        """
+        Returns a string representation of the Recipe object.
+        """
         return f"<Recipe(id={self.id}, name='{self.name}', difficulty='{self.difficulty}')>"
 
     def __str__(self):
+        """
+        Returns a formatted string representation of the Recipe object.
+        """
         return (
             f"\nRecipe ID: {self.id}\n"
             f"Name: {self.name}\n"
@@ -46,32 +67,38 @@ class Recipe(Base):
             f"{'-'*40}\n"
         )
 
-def calculate_difficulty(self):
-    ingredients_list = self.return_ingredients_as_list()
-
-    num_ingredients = len(ingredients_list)
-    if num_ingredients <= 4:
-        self.difficulty = "Easy"
-    elif num_ingredients > 4 and num_ingredients <= 5:
-        if self.cooking_time < 20:
-            self.difficulty = "Medium"
+    def calculate_difficulty(self):
+        """
+        Calculates and sets the difficulty level of the recipe based on the number of ingredients and cooking time.
+        """
+        ingredients_list = self.return_ingredients_as_list()
+        num_ingredients = len(ingredients_list)
+        if num_ingredients <= 4:
+            self.difficulty = "Easy"
+        elif num_ingredients > 4 and num_ingredients <= 5:
+            if self.cooking_time < 20:
+                self.difficulty = "Medium"
+            else:
+                self.difficulty = "Intermediate"
         else:
-            self.difficulty = "Intermediate"
-    else:
-        if self.cooking_time < 30:
-            self.difficulty = "Intermediate"
-        else:
-            self.difficulty = "Hard"
+            if self.cooking_time < 30:
+                self.difficulty = "Intermediate"
+            else:
+                self.difficulty = "Hard"
+
+    def return_ingredients_as_list(self):
+        """
+        Returns the ingredients as a list.
+        """
+        if not self.ingredients:
+            return []
+        return self.ingredients.split(", ")
 
 
-def return_ingredients_as_list(self):
-    if not self.ingredients:
-        return []
-    return self.ingredients.split(", ")
-
-
-def create_recipe():
-    # Collect recipe details from the user
+def create_recipe(session):
+    """
+    Collects recipe details from the user and adds a new recipe to the database.
+    """
     name = input("Enter the recipe name: ")
     while len(name) > 50:
         print("Invalid input. Please enter a name with 50 characters or fewer.")
@@ -112,7 +139,10 @@ def create_recipe():
     print("Recipe added successfully!")
 
 
-def view_all_recipes():
+def view_all_recipes(session):
+    """
+    Retrieves and displays all recipes from the database.
+    """
     recipes = session.query(Recipe).all()
     if not recipes:
         print("No recipes found in the database.")
@@ -122,7 +152,10 @@ def view_all_recipes():
         print(recipe)
 
 
-def search_by_ingredients():
+def search_by_ingredients(session):
+    """
+    Searches for recipes based on selected ingredients.
+    """
     if session.query(Recipe).count() == 0:
         print("No recipes found in the database.")
         return None
@@ -165,7 +198,10 @@ def search_by_ingredients():
         print("No recipes found with the selected ingredients.")
 
 
-def edit_recipe():
+def edit_recipe(session):
+    """
+    Edits an existing recipe in the database.
+    """
     if session.query(Recipe).count() == 0:
         print("No recipes found in the database.")
         return None
@@ -231,7 +267,10 @@ def edit_recipe():
     print("Recipe updated successfully!")
 
 
-def delete_recipe():
+def delete_recipe(session):
+    """
+    Deletes a recipe from the database.
+    """
     if session.query(Recipe).count() == 0:
         print("No recipes found in the database.")
         return None
@@ -262,43 +301,45 @@ def delete_recipe():
 
 
 def main_menu():
-    while True:
-        print("\n--- Recipe Manager ---")
-        print("1. Create a new recipe")
-        print("2. View all recipes")
-        print("3. Search for recipes by ingredients")
-        print("4. Edit a recipe")
-        print("5. Delete a recipe")
-        print("Type 'quit' to exit the application.")
-
-        choice = input("Please choose an option: ").strip().lower()
-
-        if choice == "1":
-            create_recipe()
-        elif choice == "2":
-            view_all_recipes()
-        elif choice == "3":
-            search_by_ingredients()
-        elif choice == "4":
-            edit_recipe()
-        elif choice == "5":
-            delete_recipe()
-        elif choice == "quit":
-            print("Exiting the application. Goodbye!")
-            session.close()
-            engine.dispose()
-            break
-        else:
-            print("Invalid input. Please enter a number between 1-5 or 'quit' to exit.")
-
-
-if __name__ == "__main__":
+    """
+    Displays the main menu and handles user input.
+    """
     # Generate the session class and bind it to the engine
     Session = sessionmaker(bind=engine)
 
-    # Initialize the session object
-    session = Session()
+    # Initialize the session object within a context manager
+    with Session() as session:
+        while True:
+            print("\n--- Recipe Manager ---")
+            print("1. Create a new recipe")
+            print("2. View all recipes")
+            print("3. Search for recipes by ingredients")
+            print("4. Edit a recipe")
+            print("5. Delete a recipe")
+            print("Type 'quit' to exit the application.")
 
+            choice = input("Please choose an option: ").strip().lower()
+
+            if choice == "1":
+                create_recipe(session)
+            elif choice == "2":
+                view_all_recipes(session)
+            elif choice == "3":
+                search_by_ingredients(session)
+            elif choice == "4":
+                edit_recipe(session)
+            elif choice == "5":
+                delete_recipe(session)
+            elif choice == "quit":
+                print("Exiting the application. Goodbye!")
+                break
+            else:
+                print(
+                    "Invalid input. Please enter a number between 1-5 or 'quit' to exit."
+                )
+
+
+if __name__ == "__main__":
     # Create the table in the database
     Base.metadata.create_all(engine)
 
